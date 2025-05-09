@@ -1,0 +1,1199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>University Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+ 
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+ html {
+      scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust to your navbar's height */
+
+    }
+
+
+    body {
+      padding-top: 160px;
+      background-color: #f8f9fa;
+      min-height: 2000px;
+  overflow-x: hidden;
+
+    }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+    /* === TOP BAR === */
+ /* Top bar flex layout */
+
+ 
+
+ /* Top bar flex layout */
+.top-bar {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background: #343a40; color: white;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px; z-index: 1100;
+  font-size: 14px;
+}
+ 
+
+.top-bar-left,
+.top-bar-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex: 0 0 auto;    /* ⬅️ do not grow or shrink */
+}
+
+/* Center search container */
+.top-bar-search {
+  position: absolute;      /* remove it from normal flex flow */
+  left: 50%;               /* move its left edge to mid-point */
+  transform: translateX(-50%);  /* shift back by half its own width */
+  display: flex;
+  align-items: center;
+  z-index: 1101;           /* above other content if needed */ 
+}
+.top-bar-search .search-icon {
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+.top-bar-search .search-icon:hover {
+  color: #ffc107;
+}
+
+/* Hidden by default, expands on focus or icon‐click */
+.search-input {
+  width: 0;
+  opacity: 0;
+  padding: 4px 8px;
+  margin-left: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+/* When the input has focus, or the parent has .active, expand */
+.search-input:focus,
+.top-bar-search.active .search-input {
+  width: 200px;
+  opacity: 1;
+  outline: none;
+}
+
+/* Adjust icons/link colors on hover */
+.top-bar a {
+  color: white; text-decoration: none;
+  display: flex; align-items: center; gap: 5px;
+  transition: color 0.2s;
+}
+.top-bar a:hover {
+  color: #ffc107;
+}
+
+
+
+    /* === MAIN NAVBAR === */
+    nav {
+      position: fixed;
+      top: 40px;
+      left: 0;
+      width: 100%;
+ 
+ 
+ 
+ 
+
+
+  height: 80px; /* Set a specific height */
+  background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+  padding: 0; /* Remove padding here if you want precise control */
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  align-items: flex-end;  /* ✅ Push content to bottom */
+}
+
+ 
+
+.nav-container {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;  /* ✅ center logo vertically */
+  padding-left: 20px;
+}
+
+.links-wrapper {
+  display: flex;
+  align-items: flex-end; /* ✅ push links to bottom */
+  padding-left: 20px;
+  flex: 1;
+
+  padding-bottom: 8px; /* 🔼 moves links up a bit */
+
+}
+    .nav-links {
+      display: flex;
+      list-style: none;
+     
+  justify-content: flex-start; /* items pack to the left */
+
+ /*justify-content: center;*/
+      gap: 2px;
+ /* padding: 5px 10px;*/  /* vertical & horizontal padding */
+
+      flex-wrap: wrap;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+ 
+padding-left: 13px;
+padding-right: 13px;
+
+padding-top: 8px;
+padding-bottom: 8px;
+
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-links li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+  color: #020302;      /* hover/active text color */
+
+    }
+
+    .nav-links li a.active {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+
+    }
+
+    .dropdown-area {
+      position: fixed;
+      top: 120px;
+      left: 0;
+      width: 100%;
+      background: #0f1894;
+      padding: 7px 0;
+      display: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      border-bottom: 4px solid #6e45e2;
+    }
+
+    .dropdown-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+  justify-content: center; /* ✅ Center the sub-links */
+
+    }
+/* On small screens: left-align */
+@media (max-width: 768px) {
+  .dropdown-content {
+    justify-content: flex-start;  /* ⬅️ switch to left-aligned */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+    .dropdown-content::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .dropdown-content::-webkit-scrollbar-thumb {
+      background: #6e45e2;
+      border-radius: 10px;
+    }
+
+ .dropdown-content a {
+  color: #fff;
+  text-decoration: none;
+  width: 170px;
+  height: 40px;                    /* Set a fixed height */
+  display: flex;                   /* Use flex for perfect centering */
+  align-items: center;            /* Vertical center */
+  justify-content: center;        /* Horizontal center */
+  border-radius: 30px;
+  background: #5b7bbd;
+  font-size: 14px;
+  border: 3px solid #6e45e2;
+  box-sizing: border-box;
+  transition: 0.3s;
+  white-space: nowrap;
+  padding: 0 15px;                 /* Horizontal padding only */
+}
+
+
+    .dropdown-content a:hover {
+  background: #a9beeb !important;
+      color: white;
+    }
+
+    .nav-links li:hover .dropdown-area,
+    .nav-links li.active .dropdown-area {
+      display: block;
+    }
+
+
+.dropdown-visual-section {
+  background: linear-gradient(to right, #f2f6ff, #dce6ff);
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #6e45e2;
+
+  animation: fadeInSlide 0.7s ease forwards;
+  opacity: 0;
+
+}
+
+.visual-content {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.visual-content img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.visual-text h2 {
+  font-size: 24px;
+  color: #334;
+  margin-bottom: 10px;
+}
+
+.visual-text p {
+  font-size: 16px;
+  color: #555;
+}
+
+.visual-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background-color: #6e45e2;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+.visual-button:hover {
+  background-color: #5033b6;
+}
+
+ 
+
+@keyframes fadeInSlide {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+ 
+
+  .hero {
+      position: relative;
+      height: 100vh;
+      color: white;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+ margin-top: 100px;
+
+    }
+
+    /* Ken Burns Zoom Background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://images.unsplash.com/photo-1622258416857-d7cf6939560c') no-repeat center center/cover;
+      z-index: -2;
+      animation: kenburns 20s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    @keyframes kenburns {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .hero-content {
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    /* Typing Heading */
+    .hero-content h1 {
+      font-size: 3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #fff;
+      width: 0;
+      margin: 0 auto 20px;
+      animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: white; }
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons a {
+      background: #f9c846;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .hero-buttons a:hover {
+      background: #fff;
+      color: #2c3e50;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: #eee;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat i {
+      font-size: 30px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p  { font-size: 1rem; }
+    }
+
+
+
+
+    /* SCROLL ARROW */
+    .scroll-down {
+      position: absolute;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      color: #fff;
+      animation: bounce 2s infinite;
+      text-decoration: none;
+      z-index: 2;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, 0);
+      }
+      40% {
+        transform: translate(-50%, -10px);
+      }
+      60% {
+        transform: translate(-50%, -5px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-content p  { font-size: 1rem; }
+    }
+
+    /* NEXT SECTION */
+    #next-section {
+      padding: 80px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    #next-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    #next-section p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+
+
+
+/* card photos */
+.dropdown-cards-section {
+  background: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background: #f4f6fb;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.card h4 {
+  margin: 15px 0 10px;
+  color: #333;
+}
+.card p {
+  color: #555;
+  font-size: 14px;
+}
+
+
+/*scrollable cards*/
+.scroll-card-strip {
+  background: #fff;
+  padding: 20px;
+  overflow-x: auto;
+}
+.scroll-cards {
+  display: flex;
+  gap: 20px;
+  min-width: 100%;
+}
+.scroll-card {
+  flex: 0 0 200px;
+  background: #f0f4ff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.scroll-card:hover {
+  transform: translateY(-5px);
+}
+.scroll-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+.scroll-card h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+
+
+ 
+ 
+
+
+    /* Carousel section */
+    .carousel-section {
+      margin-top: 100px; /* Adjust based on your layout */
+      padding: 40px 20px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .swiper-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+    }
+
+    .swiper-slide {
+      background: #d8e3fa;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-size: 20px;
+    }
+
+    /* Navigation arrows */
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #3056d3;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+
+
+.dropdown-area::after {
+  content: "";
+  display: block;
+  height: 6px;
+  background: linear-gradient(to right, #6e45e2, #88d3ce);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+
+/* LOGO ITEM (before nav links) */
+.logo-item {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-right: 15px;
+}
+
+/* LOGO IMAGE */
+.nav-logo {
+  height: 70px;           /* adjust to fit navbar height */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+
+}
+
+.nav-logo:hover {
+  transform: scale(1.05) rotate(-2deg); /* small animation on hover */
+}
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 200px;
+      }
+
+
+
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+ padding-left: 0;
+  margin-left: 0;
+      }
+
+      .dropdown-content {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 15px;
+      }
+
+      .dropdown-content a {
+        flex: 1 1 45%;
+        text-align: center;
+      }
+
+
+ .nav-links .logo-item {
+  margin-right: 15px; /* space between logo and next link */
+}
+} 
+
+
+
+
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+
+ <!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="#"><i class="fas fa-map-marker-alt"></i> Campus Map</a>
+    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="#"><i class="fas fa-calendar-alt"></i> Events</a>
+    <a href="#"><i class="fas fa-user"></i> My Account</a>
+  </div>
+
+  <!-- Centered, dynamic search -->
+  <div class="top-bar-search">
+    <i class="fas fa-search search-icon"></i>
+    <input
+      id="page-search-input"
+      type="search"
+      placeholder="Search page…"
+      class="search-input"
+    />
+  </div>
+
+  <div class="top-bar-right">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+
+  <!-- MAIN NAVBAR -->
+  <nav>
+    <div class="nav-container">
+
+
+
+    <div class="logo-wrapper">
+      <a href="#" class="logo-item">
+        <img src="logo-en.webp" alt="Logo" class="nav-logo" />
+      </a>
+    </div>
+  
+    <div class="links-wrapper">
+
+      <ul class="nav-links" id="navLinks">
+
+
+ 
+
+        <li>
+          <a href="#"><i class="fas fa-home"></i> Home</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">Main Slider</a><a href="#">News</a><a href="#">Statistics</a><a href="#">Testimonials</a><a href="#">My Account</a><a href="#">Settings</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-box"></i> Products</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">Electronics</a><a href="#">Clothing</a><a href="#">Books</a><a href="#">Home & Garden</a><a href="#">New Arrivals</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-info-circle"></i> About</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">History</a><a href="#">Team</a><a href="#">Achievements</a><a href="#">Partners</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-phone"></i> Contact</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">Phone</a><a href="#">Email</a><a href="#">Live Chat</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-graduation-cap"></i> Academic</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">Programs</a><a href="#">Faculties</a><a href="#">Departments</a><a href="#">Curriculum</a><a href="#">Research</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-user-check"></i> Admission</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">How to Apply</a><a href="#">Undergraduate</a><a href="#">Graduate</a><a href="#">Tuition</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-university"></i> Campus</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">Map</a><a href="#">Housing</a><a href="#">Dining</a><a href="#">Events</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-globe"></i> International</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">Exchange Programs</a><a href="#">IRO</a><a href="#">Scholarships</a><a href="#">News</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-users"></i> Staff</a>
+          <div class="dropdown-area">
+            <div class="dropdown-content">
+              <a href="#">Directory</a><a href="#">Faculty Login</a><a href="#">HR Services</a><a href="#">Support</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+
+    </div>
+
+    </div>
+
+  </nav>
+
+
+
+
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to PU</h1>
+      <p>Your gateway to international education and excellence</p>
+      
+      <div class="hero-buttons">
+        <a href="#programs">Explore Programs</a>
+        <a href="#apply">Apply Now</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <i class="fas fa-globe"></i>
+          <strong>25+ Countries</strong><br/>Partners Worldwide
+        </div>
+        <div class="stat">
+          <i class="fas fa-user-graduate"></i>
+          <strong>10,000+</strong><br/>Students Enrolled
+        </div>
+        <div class="stat">
+          <i class="fas fa-university"></i>
+          <strong>100+ Programs</strong><br/>Diploma to PhD
+        </div>
+      </div>
+    </div>
+ 
+
+    <a href="#next-section" class="scroll-down">
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </section>
+
+  <!-- NEXT SECTION -->
+  <section id="next-section">
+    <h2>About PU</h2>
+    <p>
+      PU is a leading university committed to academic excellence, research innovation, and global collaboration.
+      Our dynamic campus fosters creativity, critical thinking, and a passion for discovery among students and scholars.
+    </p>
+  </section>
+
+
+
+
+
+  <section class="carousel-section">
+    <h2>🌐 Explore Our Global Programs</h2>
+
+    <div class="swiper-container">
+
+      <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/250x150" alt="Slide 1" />
+      <p>Partnerships</p>
+    </div>
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/250x150" alt="Slide 2" />
+      <p>International Programs</p>
+    </div>
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/250x150" alt="Slide 3" />
+      <p>Conferences</p>
+    </div>
+
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+
+
+
+<div class="dropdown-visual-section">
+  <div class="visual-content">
+    <img src="2339.webp" alt="Visual Banner">
+    <div class="visual-text">
+      <h2>Explore Our Programs</h2>
+      <p>Discover academic opportunities, exchange programs, and more!</p>
+<a href="#" class="visual-button">Explore More</a>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="scroll-card-strip">
+  <div class="scroll-cards">
+    <div class="scroll-card">
+      <img src="https://via.placeholder.com/150" alt="Scholarships" />
+      <h4>Scholarships</h4>
+    </div>
+    <div class="scroll-card">
+      <img src="https://via.placeholder.com/150" alt="Exchange" />
+      <h4>Exchange</h4>
+    </div>
+    <div class="scroll-card">
+      <img src="https://via.placeholder.com/150" alt="Research" />
+      <h4>Research</h4>
+    </div>
+    <div class="scroll-card">
+      <img src="https://via.placeholder.com/150" alt="Campus Life" />
+      <h4>Campus Life</h4>
+    </div>
+
+    <div class="scroll-card">
+      <img src="https://via.placeholder.com/150" alt="Scholarships" />
+      <h4>Scholarships</h4>
+    </div>
+    <div class="scroll-card">
+      <img src="https://via.placeholder.com/150" alt="Exchange" />
+      <h4>Exchange</h4>
+    </div>
+    <div class="scroll-card">
+      <img src="https://via.placeholder.com/150" alt="Research" />
+      <h4>Research</h4>
+    </div>
+    <div class="scroll-card">
+      <img src="https://via.placeholder.com/150" alt="Campus Life" />
+      <h4>Campus Life</h4>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+<div class="dropdown-cards-section">
+  <div class="card-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Card 1" />
+      <h4>Study Abroad</h4>
+      <p>Discover exchange programs and mobility opportunities.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Card 2" />
+      <h4>Admissions</h4>
+      <p>Apply now and start your academic journey with us.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Card 3" />
+      <h4>Campus Life</h4>
+      <p>Explore events, clubs, and student activities.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+  <!-- Optional JavaScript for toggling dropdowns -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.nav-links li > a');
+      const navItems = document.querySelectorAll('.nav-links li');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const parentLi = this.parentElement;
+          const isActive = parentLi.classList.contains('active');
+
+          navItems.forEach(item => item.classList.remove('active'));
+
+          if (!isActive) {
+            parentLi.classList.add('active');
+          }
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.nav-container')) {
+          navItems.forEach(item => item.classList.remove('active'));
+        }
+      });
+    });
+
+ 
+
+  (function(){
+    const input = document.getElementById('page-search-input');
+    let highlights = [];
+
+    function clear() {
+      highlights.forEach(span => {
+        const textNode = document.createTextNode(span.textContent);
+        span.parentNode.replaceChild(textNode, span);
+      });
+      highlights = [];
+    }
+
+    function highlight(term) {
+      if (!term) return;
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let node;
+      while (node = walker.nextNode()) {
+        const lc = node.textContent.toLowerCase();
+        const idx = lc.indexOf(term);
+        if (idx > -1) {
+          const span = document.createElement('span');
+          span.textContent = node.textContent.substr(idx, term.length);
+          span.style.background = '#ff0';
+          span.style.color = '#000';
+
+          const after = node.splitText(idx);
+          after.textContent = after.textContent.substr(term.length);
+          node.parentNode.insertBefore(span, after);
+          highlights.push(span);
+        }
+      }
+    }
+
+    input.addEventListener('input', e => {
+      clear();
+      const term = e.target.value.trim().toLowerCase();
+      if (term) highlight(term);
+    });
+  })();
+
+
+ 
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.top-bar-search');
+    const icon = container.querySelector('.search-icon');
+    const input = container.querySelector('.search-input');
+    let highlights = [];
+
+    // Toggle expand on icon click
+    icon.addEventListener('click', () => {
+      container.classList.toggle('active');
+      input.focus();
+    });
+
+    // In‐page search & highlight
+    function clearHighlights() {
+      highlights.forEach(span => {
+        const tn = document.createTextNode(span.textContent);
+        span.parentNode.replaceChild(tn, span);
+      });
+      highlights = [];
+    }
+
+    function highlight(term) {
+      if (!term) return;
+      const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+      );
+      let node;
+      while (node = walker.nextNode()) {
+        const lc = node.textContent.toLowerCase();
+        const idx = lc.indexOf(term);
+        if (idx > -1) {
+          const span = document.createElement('span');
+          span.textContent = node.textContent.substr(idx, term.length);
+          span.style.background = '#ff0';
+          span.style.color = '#000';
+          const after = node.splitText(idx);
+          after.textContent = after.textContent.substr(term.length);
+          node.parentNode.insertBefore(span, after);
+          highlights.push(span);
+        }
+      }
+    }
+
+    input.addEventListener('input', e => {
+      clearHighlights();
+      const term = e.target.value.trim().toLowerCase();
+      if (term) highlight(term);
+    });
+
+    // Clicking outside closes search
+    document.addEventListener('click', e => {
+      if (!container.contains(e.target) && e.target !== icon) {
+        container.classList.remove('active');
+        clearHighlights();
+      }
+    });
+  });
+ 
+
+
+
+// swiper//
+ 
+ 
+
+  document.addEventListener("DOMContentLoaded", function () {
+      new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          480: { slidesPerView: 1 },
+        },
+      });
+    });
+
+ 
+  </script>
+</body>
+</html>

@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global University - Excellence in Education and Research</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config={
+            theme:{
+                extend:{
+                    colors:{
+                        primary:'#1e40af',
+                        secondary:'#0ea5e9'
+                    },
+                    borderRadius:{
+                        'none':'0px',
+                        'sm':'4px',
+                        DEFAULT:'8px',
+                        'md':'12px',
+                        'lg':'16px',
+                        'xl':'20px',
+                        '2xl':'24px',
+                        '3xl':'32px',
+                        'full':'9999px',
+                        'button':'8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.1) 100%), url('https://readdy.ai/api/search-image?query=beautiful%20modern%20university%20campus%20with%20historic%20and%20contemporary%20buildings%2C%20students%20walking%2C%20green%20spaces%2C%20trees%2C%20blue%20sky%2C%20bright%20day%2C%20professional%20photography%2C%20high%20resolution%2C%20architectural%20photography&width=1920&height=1080&seq=1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .achievement-ticker {
+            animation: ticker 30s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .language-dropdown:hover .language-options {
+            display: block;
+        }
+
+
+
+
+ /* Mega Menu Fix - replace all previous mega menu CSS */
+.nav-item {
+    position: static; /* Changed from relative to allow full-width menus */
+}
+
+ .mega-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -85%; /* Changed from 50% */
+/*    width: 800px;*/  /* Changed from 100% */
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 0.5rem;
+    padding: 0.3rem;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    transform: none; /* Remove translateX */
+
+  width: max-content; /* Fits content width */
+    min-width: 520px; /* But not smaller than this */
+/*    left: 0; */
+    transform: none;
+}
+
+.nav-item {
+    position: relative; /* Ensure this is relative for proper positioning */
+}
+
+
+.nav-item:hover .mega-menu {
+    display: grid; /* Changed from block to maintain grid layout */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+ 
+
+/* Menu content styling */
+.mega-menu h3 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: #1e40af;
+}
+
+.mega-menu ul {
+    white-space: nowrap;
+}
+
+.mega-menu a {
+    display: inline-block;
+    width: 100%;
+    padding: 0.25rem 0;
+    font-size: 0.875rem; /* 14px - adjust this value as needed */
+
+}
+
+/* Hover buffer zone */
+.nav-item > a {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.nav-item > a::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+    .mega-menu {
+        width: 100%;
+        grid-template-columns: 1fr; /* Single column */
+    }
+}
+
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #1e40af;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .custom-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #1e40af;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .custom-checkbox.checked {
+            background-color: #1e40af;
+            border-color: #1e40af;
+        }
+        .custom-checkbox.checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+        .custom-switch-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            border-radius: 24px;
+            transition: 0.4s;
+        }
+        .custom-switch-thumb {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+        .custom-switch.active .custom-switch-track {
+            background-color: #1e40af;
+        }
+        .custom-switch.active .custom-switch-thumb {
+            transform: translateX(24px);
+        }
+        .custom-radio {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        .custom-radio.checked {
+            border-color: #1e40af;
+        }
+        .custom-radio.checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 3px;
+            left: 3px;
+            background-color: #1e40af;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto">
+            <!-- Top Bar -->
+            <div class="flex justify-between items-center py-2 px-4 border-b border-gray-100">
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selector -->
+                    <div class="relative language-dropdown">
+                        <button class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-global-line"></i>
+                            </div>
+                            <span>English</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </button>
+                        <div class="language-options hidden absolute top-full left-0 bg-white shadow-lg rounded py-2 w-48 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 text-primary font-medium">English</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">العربية</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Français</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Español</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Deutsch</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">中文</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">日本語</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Русский</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="hidden md:flex items-center space-x-4 text-sm">
+                        <a href="#" class="text-gray-600 hover:text-primary">Students</a>
+                        <a href="#" class="text-gray-600 hover:text-primary">Faculty</a>
+                        <a href="#" class="text-gray-600 hover:text-primary">Staff</a>
+                        <a href="#" class="text-gray-600 hover:text-primary">Alumni</a>
+                        <a href="#" class="text-gray-600 hover:text-primary">Partners</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Search -->
+                    <div class="relative hidden md:block">
+                        <input type="text" placeholder="Search..." class="pl-10 pr-4 py-1 text-sm border-none rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 w-48">
+                        <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center text-gray-400">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="flex items-center space-x-2">
+                        <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Navigation -->
+            <div class="flex justify-between items-center py-4 px-4">
+                <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+                
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <div class="relative nav-item">
+                        <a href="#" class="flex items-center space-x-1 font-medium hover:text-primary">
+                            <span>Academics & Programs</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </a>
+                        <div class="mega-menu absolute bg-white shadow-xl p-6 grid grid-cols-3 gap-6">
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Undergraduate</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Bachelor of Arts</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Bachelor of Science</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Bachelor of Engineering</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Bachelor of Business</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">View All Programs</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Graduate</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Master's Programs</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Doctoral Programs</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Professional Certificates</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Research Opportunities</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">View All Programs</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Faculties</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Arts & Humanities</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Science & Technology</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Business & Economics</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Medicine & Health</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">View All Faculties</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative nav-item">
+                        <a href="#" class="flex items-center space-x-1 font-medium hover:text-primary">
+                            <span>International Relations</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </a>
+                        <div class="mega-menu absolute bg-white shadow-xl p-6 grid grid-cols-3 gap-6">
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Partner Institutions</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Europe</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">North America</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Asia & Pacific</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Africa & Middle East</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Latin America</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Exchange Programs</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Semester Abroad</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Summer Programs</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Dual Degree Options</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Faculty Exchange</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Research Collaborations</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Global Initiatives</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Global Campuses</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">International Conferences</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Cultural Programs</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Global Research Projects</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">International Alumni Network</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative nav-item">
+                        <a href="#" class="flex items-center space-x-1 font-medium hover:text-primary">
+                            <span>Campus Life</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </a>
+                        <div class="mega-menu absolute bg-white shadow-xl p-6 grid grid-cols-3 gap-6">
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Student Life</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Housing & Residence</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Dining Services</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Student Organizations</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Recreation & Fitness</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Health & Wellness</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Campus Facilities</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Libraries</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Research Centers</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Sports Facilities</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Arts & Culture</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Technology Resources</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Campus Tours</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Virtual Tours</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Guided Tours</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Self-Guided Tours</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Group Tours</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Schedule a Visit</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative nav-item">
+                        <a href="#" class="flex items-center space-x-1 font-medium hover:text-primary">
+                            <span>Research & Projects</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </a>
+                        <div class="mega-menu absolute bg-white shadow-xl p-6 grid grid-cols-3 gap-6">
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Research Areas</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Artificial Intelligence</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Climate Change</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Public Health</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Sustainable Energy</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">View All Research</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Research Centers</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Center for Advanced Materials</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Institute for Global Health</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Quantum Computing Lab</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Renewable Energy Institute</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">View All Centers</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Opportunities</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Research Grants</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Student Research</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Industry Partnerships</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Publication Support</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Research Events</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative nav-item">
+                        <a href="#" class="flex items-center space-x-1 font-medium hover:text-primary">
+                            <span>Admissions</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </a>
+                        <div class="mega-menu absolute bg-white shadow-xl p-6 grid grid-cols-3 gap-6">
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Apply</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Undergraduate Admissions</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Graduate Admissions</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">International Students</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Transfer Students</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Application Deadlines</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Financial Aid</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Scholarships</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Grants & Loans</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Work-Study Programs</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">International Aid</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Cost Calculator</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-3 text-primary">Resources</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Visit Campus</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Request Information</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Admissions Events</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">Contact Admissions</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-primary">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hidden md:block px-6 py-2 text-primary border border-primary rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap">Log In</a>
+                    <a href="#" class="px-6 py-2 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Apply Now</a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-32 pb-16 md:pt-40 md:pb-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Shaping Tomorrow's Leaders Today</h1>
+                <p class="text-lg text-gray-700 mb-8 max-w-xl">Join a global community of scholars at one of the world's most prestigious universities. Discover exceptional academic programs, groundbreaking research, and transformative international experiences.</p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="px-6 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors flex items-center whitespace-nowrap">
+                        <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                            <i class="ri-video-line"></i>
+                        </div>
+                        Virtual Campus Tour
+                    </a>
+                    <a href="#" class="px-6 py-3 border border-primary text-primary rounded-button hover:bg-primary/5 transition-colors flex items-center whitespace-nowrap">
+                        <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                            <i class="ri-user-add-line"></i>
+                        </div>
+                        Apply Now
+                    </a>
+                    <a href="#" class="px-6 py-3 bg-secondary text-white rounded-button hover:bg-secondary/90 transition-colors flex items-center whitespace-nowrap">
+                        <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                            <i class="ri-global-line"></i>
+                        </div>
+                        Exchange Programs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievement Ticker -->
+    <div class="bg-primary text-white py-3 overflow-hidden">
+        <div class="achievement-ticker flex items-center whitespace-nowrap">
+            <div class="flex items-center mx-4">
+                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                    <i class="ri-award-fill"></i>
+                </div>
+                <span>Ranked #12 in World University Rankings 2025</span>
+            </div>
+            <div class="flex items-center mx-4">
+                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                    <i class="ri-medal-fill"></i>
+                </div>
+                <span>97% Graduate Employment Rate</span>
+            </div>
+            <div class="flex items-center mx-4">
+                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                    <i class="ri-global-fill"></i>
+                </div>
+                <span>Students from 142 Countries</span>
+            </div>
+            <div class="flex items-center mx-4">
+                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                    <i class="ri-building-4-fill"></i>
+                </div>
+                <span>320+ Partner Universities Worldwide</span>
+            </div>
+            <div class="flex items-center mx-4">
+                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                    <i class="ri-book-fill"></i>
+                </div>
+                <span>Over 300 Academic Programs</span>
+            </div>
+            <div class="flex items-center mx-4">
+                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                    <i class="ri-microscope-fill"></i>
+                </div>
+                <span>$450M Annual Research Funding</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Campus Experience -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Explore Our Campus</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Discover our world-class facilities through an interactive virtual tour. Navigate through academic buildings, research centers, student housing, and recreational areas.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Interactive Map -->
+                <div class="w-full lg:w-2/3 bg-gray-100 rounded-lg overflow-hidden shadow-lg relative h-[500px]" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;">
+                    <!-- Map Overlay Controls -->
+                    <div class="absolute top-4 right-4 bg-white rounded-lg shadow-md p-3 flex flex-col space-y-3">
+                        <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:bg-gray-100">
+                            <i class="ri-add-line text-xl"></i>
+                        </button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:bg-gray-100">
+                            <i class="ri-subtract-line text-xl"></i>
+                        </button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:bg-gray-100">
+                            <i class="ri-compass-3-line text-xl"></i>
+                        </button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:bg-gray-100">
+                            <i class="ri-fullscreen-line text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Location Markers (Sample) -->
+                    <div class="absolute top-1/4 left-1/3 w-10 h-10 flex items-center justify-center">
+                        <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white animate-pulse">
+                            <i class="ri-building-2-line"></i>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 w-10 h-10 flex items-center justify-center">
+                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-white animate-pulse">
+                            <i class="ri-book-open-line"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-1/3 right-1/4 w-10 h-10 flex items-center justify-center">
+                        <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white animate-pulse">
+                            <i class="ri-plant-line"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tour Information -->
+                <div class="w-full lg:w-1/3 bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4">Campus Tour Guide</h3>
+                    
+                    <!-- Location Filter -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Filter by Location Type</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center space-x-2">
+                                <div class="custom-checkbox" id="academic-checkbox" onclick="this.classList.toggle('checked')"></div>
+                                <label for="academic-checkbox" class="text-sm">Academic Buildings</label>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="custom-checkbox" id="residence-checkbox" onclick="this.classList.toggle('checked')"></div>
+                                <label for="residence-checkbox" class="text-sm">Residence Halls</label>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="custom-checkbox" id="research-checkbox" onclick="this.classList.toggle('checked')"></div>
+                                <label for="research-checkbox" class="text-sm">Research Centers</label>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="custom-checkbox" id="recreation-checkbox" onclick="this.classList.toggle('checked')"></div>
+                                <label for="recreation-checkbox" class="text-sm">Recreation</label>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="custom-checkbox" id="dining-checkbox" onclick="this.classList.toggle('checked')"></div>
+                                <label for="dining-checkbox" class="text-sm">Dining Facilities</label>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="custom-checkbox" id="landmarks-checkbox" onclick="this.classList.toggle('checked')"></div>
+                                <label for="landmarks-checkbox" class="text-sm">Landmarks</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour Options -->
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-3">Suggested Tours</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+                                    <i class="ri-user-star-line"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium">Prospective Student Tour</h5>
+                                    <p class="text-sm text-gray-600">45 minutes • 12 stops</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
+                                <div class="w-10 h-10 flex items-center justify-center bg-secondary/10 rounded-full text-secondary">
+                                    <i class="ri-book-mark-line"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium">Academic Highlights</h5>
+                                    <p class="text-sm text-gray-600">30 minutes • 8 stops</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
+                                <div class="w-10 h-10 flex items-center justify-center bg-green-500/10 rounded-full text-green-500">
+                                    <i class="ri-history-line"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium">Historical Campus</h5>
+                                    <p class="text-sm text-gray-600">60 minutes • 15 stops</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="block w-full py-3 bg-primary text-white text-center rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Start 360° Virtual Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Relations -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Global Connections</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Our university maintains strong partnerships with leading institutions worldwide, offering exceptional opportunities for international collaboration, exchange, and research.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6 border-b">
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <h3 class="text-2xl font-bold">International Partnerships</h3>
+                        <div class="flex items-center space-x-3">
+                            <div class="flex items-center space-x-2 bg-gray-100 rounded-full px-4 py-2">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-building-line"></i>
+                                </div>
+                                <span class="font-medium">320+ Partner Universities</span>
+                            </div>
+                            <div class="flex items-center space-x-2 bg-gray-100 rounded-full px-4 py-2">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-earth-line"></i>
+                                </div>
+                                <span class="font-medium">68 Countries</span>
+                            </div>
+                            <div class="flex items-center space-x-2 bg-gray-100 rounded-full px-4 py-2">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                    <i class="ri-exchange-line"></i>
+                                </div>
+                                <span class="font-medium">1,200+ Exchange Students</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- World Map -->
+                        <div class="w-full lg:w-2/3 bg-gray-100 rounded-lg overflow-hidden h-[400px]" style="background-image: url('https://readdy.ai/api/search-image?query=detailed%20world%20map%20with%20highlighted%20connections%20between%20countries%2C%20showing%20global%20network%20of%20university%20partnerships%2C%20professional%20design%2C%20clean%20modern%20style%2C%20blue%20and%20white%20color%20scheme&width=1200&height=800&seq=2&orientation=landscape'); background-size: cover; background-position: center;"></div>
+                        
+                        <!-- Partnership Information -->
+                        <div class="w-full lg:w-1/3">
+                            <div class="mb-6">
+                                <h4 class="font-bold text-lg mb-3">Explore by Region</h4>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 cursor-pointer">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 flex items-center justify-center bg-blue-500/10 rounded-full text-blue-500">
+                                                <i class="ri-earth-line"></i>
+                                            </div>
+                                            <span>Europe</span>
+                                        </div>
+                                        <span class="font-medium">142 Partners</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 cursor-pointer">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 flex items-center justify-center bg-red-500/10 rounded-full text-red-500">
+                                                <i class="ri-earth-line"></i>
+                                            </div>
+                                            <span>Asia & Pacific</span>
+                                        </div>
+                                        <span class="font-medium">98 Partners</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 cursor-pointer">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 flex items-center justify-center bg-green-500/10 rounded-full text-green-500">
+                                                <i class="ri-earth-line"></i>
+                                            </div>
+                                            <span>North America</span>
+                                        </div>
+                                        <span class="font-medium">45 Partners</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 cursor-pointer">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 flex items-center justify-center bg-yellow-500/10 rounded-full text-yellow-500">
+                                                <i class="ri-earth-line"></i>
+                                            </div>
+                                            <span>Latin America</span>
+                                        </div>
+                                        <span class="font-medium">23 Partners</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 cursor-pointer">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 flex items-center justify-center bg-purple-500/10 rounded-full text-purple-500">
+                                                <i class="ri-earth-line"></i>
+                                            </div>
+                                            <span>Africa & Middle East</span>
+                                        </div>
+                                        <span class="font-medium">12 Partners</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="block w-full py-3 bg-primary text-white text-center rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Explore All Partnerships</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exchange Programs -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=diverse%20group%20of%20international%20students%20studying%20together%20in%20a%20modern%20university%20library%2C%20bright%20natural%20lighting%2C%20collaborative%20learning%20environment%2C%20professional%20photography&width=600&height=400&seq=3&orientation=landscape');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Student Exchange</h3>
+                        <p class="text-gray-600 mb-4">Experience a semester or full academic year at one of our partner institutions. Immerse yourself in a new culture while continuing your academic journey.</p>
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-4">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span>1-2 Semesters</span>
+                            <span class="mx-2">•</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-global-line"></i>
+                            </div>
+                            <span>Worldwide Options</span>
+                        </div>
+                        <a href="#" class="block w-full py-2 bg-primary text-white text-center rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20academic%20conference%20with%20diverse%20faculty%20members%20presenting%20research%2C%20modern%20university%20auditorium%2C%20international%20academic%20collaboration%2C%20professional%20photography&width=600&height=400&seq=4&orientation=landscape');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Faculty Mobility</h3>
+                        <p class="text-gray-600 mb-4">Opportunities for faculty to teach, conduct research, and collaborate with colleagues at partner institutions around the world.</p>
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-4">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span>2 Weeks - 1 Semester</span>
+                            <span class="mx-2">•</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-user-settings-line"></i>
+                            </div>
+                            <span>All Disciplines</span>
+                        </div>
+                        <a href="#" class="block w-full py-2 bg-primary text-white text-center rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=international%20summer%20school%20with%20diverse%20students%20participating%20in%20workshops%2C%20outdoor%20campus%20setting%2C%20collaborative%20learning%2C%20bright%20summer%20day%2C%20professional%20photography&width=600&height=400&seq=5&orientation=landscape');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Summer Programs</h3>
+                        <p class="text-gray-600 mb-4">Intensive short-term academic and cultural programs during summer months at partner universities worldwide.</p>
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-4">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span>2-8 Weeks</span>
+                            <span class="mx-2">•</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-sun-line"></i>
+                            </div>
+                            <span>June-August</span>
+                        </div>
+                        <a href="#" class="block w-full py-2 bg-primary text-white text-center rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic & Research Hub -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Academic Excellence & Research</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Discover our diverse academic programs and groundbreaking research initiatives that address global challenges and shape the future.</p>
+            </div>
+            
+            <!-- Program Finder -->
+            <div class="bg-gray-50 rounded-lg shadow-lg p-6 mb-12">
+                <h3 class="text-2xl font-bold mb-6">Find Your Program</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Program Level</label>
+                        <div class="relative">
+                            <button class="w-full px-4 py-2 bg-white border border-gray-300 rounded text-left flex items-center justify-between">
+                                <span>All Levels</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Field of Study</label>
+                        <div class="relative">
+                            <button class="w-full px-4 py-2 bg-white border border-gray-300 rounded text-left flex items-center justify-between">
+                                <span>All Fields</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Study Mode</label>
+                        <div class="relative">
+                            <button class="w-full px-4 py-2 bg-white border border-gray-300 rounded text-left flex items-center justify-between">
+                                <span>All Modes</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Duration</label>
+                        <div class="relative">
+                            <button class="w-full px-4 py-2 bg-white border border-gray-300 rounded text-left flex items-center justify-between">
+                                <span>Any Duration</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <input type="text" placeholder="Search by program name or keyword" class="flex-1 px-4 py-2 border-none rounded-l focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <button class="px-6 py-2 bg-primary text-white rounded-r hover:bg-primary/90 transition-colors whitespace-nowrap">Search Programs</button>
+                </div>
+            </div>
+            
+            <!-- Research Highlights -->
+            <div class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                    <h3 class="text-2xl font-bold">Research Highlights</h3>
+                    <div class="flex items-center space-x-1 bg-gray-100 rounded-full p-1 mt-4 md:mt-0">
+                        <button class="px-4 py-1 rounded-full bg-primary text-white">All</button>
+                        <button class="px-4 py-1 rounded-full hover:bg-gray-200">Science & Tech</button>
+                        <button class="px-4 py-1 rounded-full hover:bg-gray-200">Medicine</button>
+                        <button class="px-4 py-1 rounded-full hover:bg-gray-200">Humanities</button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=advanced%20scientific%20laboratory%20with%20researchers%20working%20on%20quantum%20computing%20experiment%2C%20high-tech%20equipment%2C%20blue%20light%2C%20professional%20photography%2C%20clean%20modern%20lab%20environment&width=600&height=400&seq=6&orientation=landscape');"></div>
+                        <div class="p-6">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Quantum Computing</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-medium">Science & Tech</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Breakthrough in Quantum Error Correction</h4>
+                            <p class="text-gray-600 mb-4">Our researchers have developed a novel approach to quantum error correction that could accelerate the development of practical quantum computers.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20middle-aged%20male%20scientist%20with%20glasses%2C%20neutral%20background%2C%20professional%20photography&width=100&height=100&seq=7&orientation=squarish" class="w-8 h-8 rounded-full object-cover">
+                                    <span class="text-sm">Prof. David Chen</span>
+                                </div>
+                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                    <span>Read More</span>
+                                    <div class="w-4 h-4 ml-1 flex items-center justify-center">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=medical%20research%20laboratory%20with%20diverse%20team%20of%20scientists%20examining%20cell%20cultures%2C%20microscopes%2C%20clean%20modern%20environment%2C%20professional%20medical%20research%20photography&width=600&height=400&seq=8&orientation=landscape');"></div>
+                        <div class="p-6">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Immunology</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-medium">Medicine</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">New Immunotherapy Approach for Cancer Treatment</h4>
+                            <p class="text-gray-600 mb-4">A promising new immunotherapy technique developed by our medical researchers shows significant results in early clinical trials.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20female%20medical%20researcher%20with%20lab%20coat%2C%20neutral%20background%2C%20professional%20photography&width=100&height=100&seq=9&orientation=squarish" class="w-8 h-8 rounded-full object-cover">
+                                    <span class="text-sm">Dr. Sarah Patel</span>
+                                </div>
+                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                    <span>Read More</span>
+                                    <div class="w-4 h-4 ml-1 flex items-center justify-center">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=sustainable%20energy%20research%20facility%20with%20solar%20panels%20and%20wind%20turbines%2C%20researchers%20working%20with%20equipment%2C%20bright%20modern%20facility%2C%20professional%20photography&width=600&height=400&seq=10&orientation=landscape');"></div>
+                        <div class="p-6">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Renewable Energy</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-medium">Science & Tech</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Advanced Solar Cell Technology Increases Efficiency</h4>
+                            <p class="text-gray-600 mb-4">Our engineering team has developed a new solar cell structure that achieves 32% efficiency, setting a new record for commercial applications.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20young%20female%20engineer%20with%20dark%20hair%2C%20neutral%20background%2C%20professional%20photography&width=100&height=100&seq=11&orientation=squarish" class="w-8 h-8 rounded-full object-cover">
+                                    <span class="text-sm">Prof. Maria Rodriguez</span>
+                                </div>
+                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                    <span>Read More</span>
+                                    <div class="w-4 h-4 ml-1 flex items-center justify-center">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="#" class="inline-block px-6 py-3 border border-primary text-primary rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap">View All Research Projects</a>
+                </div>
+            </div>
+            
+            <!-- Research Impact -->
+            <div class="bg-gray-50 rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold mb-6">Research Impact</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div id="publications-chart" class="h-80 bg-white rounded-lg p-4"></div>
+                    <div id="funding-chart" class="h-80 bg-white rounded-lg p-4"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    <div class="bg-white p-4 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">2,450+</div>
+                        <p class="text-gray-600">Research Publications</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">$450M</div>
+                        <p class="text-gray-600">Research Funding</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">185</div>
+                        <p class="text-gray-600">Research Centers</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">320+</div>
+                        <p class="text-gray-600">Industry Partners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Achievement Showcase -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Student Achievements</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Celebrating the remarkable accomplishments of our students in academics, research, innovation, and community service.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <div class="flex items-center space-x-1 bg-gray-100 rounded-full p-1">
+                    <button class="px-4 py-1 rounded-full bg-primary text-white">All</button>
+                    <button class="px-4 py-1 rounded-full hover:bg-gray-200">Academic</button>
+                    <button class="px-4 py-1 rounded-full hover:bg-gray-200">Research</button>
+                    <button class="px-4 py-1 rounded-full hover:bg-gray-200">Innovation</button>
+                    <button class="px-4 py-1 rounded-full hover:bg-gray-200">Global</button>
+                </div>
+                
+                <div class="mt-4 md:mt-0">
+                    <button class="px-4 py-2 bg-white rounded shadow hover:bg-gray-50 flex items-center space-x-2">
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-filter-3-line"></i>
+                        </div>
+                        <span>Filter</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Achievement Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-56 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=international%20robotics%20competition%20with%20diverse%20student%20team%20presenting%20their%20robot%2C%20modern%20tech%20venue%2C%20excitement%2C%20professional%20photography&width=600&height=400&seq=12&orientation=landscape');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Innovation</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-medium">Engineering</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">First Place at International Robotics Competition</h4>
+                        <p class="text-gray-600 mb-4">Our engineering students won first place at the International Robotics Challenge with their innovative autonomous rescue robot design.</p>
+                        
+                        <div class="flex items-center space-x-3 mb-4">
+                            <img src="https://readdy.ai/api/search-image?query=diverse%20group%20of%20university%20engineering%20students%2C%20professional%20headshot%2C%20neutral%20background&width=100&height=100&seq=13&orientation=squarish" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="font-medium">Robotics Team</p>
+                                <p class="text-sm text-gray-500">April 5, 2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-thumb-up-line"></i>
+                                    </div>
+                                    <span>248</span>
+                                </button>
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-chat-1-line"></i>
+                                    </div>
+                                    <span>42</span>
+                                </button>
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-share-line"></i>
+                                    </div>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                            
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievement Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-56 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=prestigious%20academic%20award%20ceremony%20with%20female%20student%20receiving%20award%20on%20stage%2C%20formal%20setting%2C%20applause%2C%20professional%20photography&width=600&height=400&seq=14&orientation=landscape');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Academic</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-medium">Economics</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Global Economics Prize for Outstanding Research</h4>
+                        <p class="text-gray-600 mb-4">PhD candidate Olivia Wang received the prestigious Global Economics Prize for her groundbreaking research on sustainable economic development.</p>
+                        
+                        <div class="flex items-center space-x-3 mb-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20young%20asian%20female%20graduate%20student%2C%20neutral%20background%2C%20professional%20photography&width=100&height=100&seq=15&orientation=squarish" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="font-medium">Olivia Wang</p>
+                                <p class="text-sm text-gray-500">March 18, 2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-thumb-up-line"></i>
+                                    </div>
+                                    <span>312</span>
+                                </button>
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-chat-1-line"></i>
+                                    </div>
+                                    <span>56</span>
+                                </button>
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-share-line"></i>
+                                    </div>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                            
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievement Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-56 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=international%20student%20team%20at%20United%20Nations%20headquarters%20presenting%20climate%20policy%2C%20formal%20setting%2C%20diverse%20group%2C%20professional%20photography&width=600&height=400&seq=16&orientation=landscape');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Global</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-medium">Policy</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">UN Climate Policy Competition Winners</h4>
+                        <p class="text-gray-600 mb-4">Our international affairs students won the UN Climate Policy Competition with their innovative framework for sustainable urban development.</p>
+                        
+                        <div class="flex items-center space-x-3 mb-4">
+                            <img src="https://readdy.ai/api/search-image?query=diverse%20group%20of%20university%20policy%20students%2C%20professional%20headshot%2C%20neutral%20background&width=100&height=100&seq=17&orientation=squarish" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="font-medium">Policy Team</p>
+                                <p class="text-sm text-gray-500">February 22, 2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-thumb-up-line"></i>
+                                    </div>
+                                    <span>186</span>
+                                </button>
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-chat-1-line"></i>
+                                    </div>
+                                    <span>28</span>
+                                </button>
+                                <button class="flex items-center space-x-1 text-gray-500 hover:text-primary">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-share-line"></i>
+                                    </div>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                            
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block px-6 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">View All Achievements</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarships & Mobility -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Scholarships & Mobility Opportunities</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore financial support options and international mobility programs available to students and staff.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Scholarships -->
+                <div class="bg-gray-50 rounded-lg shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">Scholarships</h3>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                            <span>View All</span>
+                            <div class="w-4 h-4 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-2">Global Excellence Scholarship</h4>
+                            <p class="text-gray-600 mb-3">Full tuition coverage for outstanding international students with exceptional academic achievements.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-user-line"></i>
+                                    </div>
+                                    <span>International Students</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-money-dollar-circle-line"></i>
+                                    </div>
+                                    <span>Full Tuition</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-calendar-line"></i>
+                                    </div>
+                                    <span>Deadline: Oct 15, 2025</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Learn More</a>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-2">Research Excellence Scholarship</h4>
+                            <p class="text-gray-600 mb-3">For graduate students pursuing research in priority areas including AI, climate science, and public health.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-user-line"></i>
+                                    </div>
+                                    <span>Graduate Students</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-money-dollar-circle-line"></i>
+                                    </div>
+                                    <span>$25,000/year</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-calendar-line"></i>
+                                    </div>
+                                    <span>Deadline: Nov 30, 2025</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Learn More</a>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-2">Global Leadership Scholarship</h4>
+                            <p class="text-gray-600 mb-3">For students demonstrating exceptional leadership potential and community engagement.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-user-line"></i>
+                                    </div>
+                                    <span>All Students</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-money-dollar-circle-line"></i>
+                                    </div>
+                                    <span>$15,000/year</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-calendar-line"></i>
+                                    </div>
+                                    <span>Deadline: Dec 15, 2025</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobility Programs -->
+                <div class="bg-gray-50 rounded-lg shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">Mobility Programs</h3>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                            <span>View All</span>
+                            <div class="w-4 h-4 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-2">Global Scholars Exchange Program</h4>
+                            <p class="text-gray-600 mb-3">Semester or year-long exchange opportunities at over 200 partner universities worldwide.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-user-line"></i>
+                                    </div>
+                                    <span>Undergrad & Graduate</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-time-line"></i>
+                                    </div>
+                                    <span>1-2 Semesters</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-calendar-line"></i>
+                                    </div>
+                                    <span>Next Deadline: Sep 1, 2025</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Learn More</a>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-2">Faculty Mobility Grant</h4>
+                            <p class="text-gray-600 mb-3">Funding for faculty members to teach or conduct research at partner institutions worldwide.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-user-line"></i>
+                                    </div>
+                                    <span>Faculty Members</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-time-line"></i>
+                                    </div>
+                                    <span>2 Weeks - 1 Semester</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-calendar-line"></i>
+                                    </div>
+                                    <span>Rolling Applications</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Learn More</a>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-2">Global Summer Research Program</h4>
+                            <p class="text-gray-600 mb-3">Summer research opportunities for students at partner research institutions and corporate labs worldwide.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-user-line"></i>
+                                    </div>
+                                    <span>Undergraduate & Graduate</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-time-line"></i>
+                                    </div>
+                                    <span>8-12 Weeks (Summer)</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-calendar-line"></i>
+                                    </div>
+                                    <span>Deadline: Feb 15, 2026</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Application Timeline -->
+            <div class="mt-12 bg-gray-50 rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold mb-6">Application Timeline</h3>
+                
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 transform md:translate-x-px"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="space-y-8">
+                        <!-- Item 1 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="flex md:w-1/2 md:justify-end mb-4 md:mb-0 md:pr-8">
+                                <div class="bg-white p-4 rounded-lg shadow md:text-right">
+                                    <h4 class="font-bold text-lg">Research Program Options</h4>
+                                    <p class="text-gray-600">Explore available programs and eligibility requirements</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center transform -translate-x-1/2 text-white">1</div>
+                            <div class="md:w-1/2 md:pl-8"></div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8"></div>
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center transform -translate-x-1/2 text-white">2</div>
+                            <div class="flex md:w-1/2 mb-4 md:mb-0 md:pl-8">
+                                <div class="bg-white p-4 rounded-lg shadow">
+                                    <h4 class="font-bold text-lg">Prepare Application Materials</h4>
+                                    <p class="text-gray-600">Gather transcripts, recommendations, and write personal statement</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="flex md:w-1/2 md:justify-end mb-4 md:mb-0 md:pr-8">
+                                <div class="bg-white p-4 rounded-lg shadow md:text-right">
+                                    <h4 class="font-bold text-lg">Submit Application</h4>
+                                    <p class="text-gray-600">Complete online application before the program deadline</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center transform -translate-x-1/2 text-white">3</div>
+                            <div class="md:w-1/2 md:pl-8"></div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8"></div>
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center transform -translate-x-1/2 text-white">4</div>
+                            <div class="flex md:w-1/2 mb-4 md:mb-0 md:pl-8">
+                                <div class="bg-white p-4 rounded-lg shadow">
+                                    <h4 class="font-bold text-lg">Application Review</h4>
+                                    <p class="text-gray-600">Applications reviewed by selection committee</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 5 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="flex md:w-1/2 md:justify-end mb-4 md:mb-0 md:pr-8">
+                                <div class="bg-white p-4 rounded-lg shadow md:text-right">
+                                    <h4 class="font-bold text-lg">Notification of Decision</h4>
+                                    <p class="text-gray-600">Receive acceptance notification and funding details</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center transform -translate-x-1/2 text-white">5</div>
+                            <div class="md:w-1/2 md:pl-8"></div>
+                        </div>
+                        
+                        <!-- Item 6 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8"></div>
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center transform -translate-x-1/2 text-white">6</div>
+                            <div class="flex md:w-1/2 mb-4 md:mb-0 md:pl-8">
+                                <div class="bg-white p-4 rounded-lg shadow">
+                                    <h4 class="font-bold text-lg">Pre-Departure Preparation</h4>
+                                    <p class="text-gray-600">Attend orientation sessions and prepare for your experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">News & Events</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Stay updated with the latest university news, upcoming events, and important announcements.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- News Column -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">Latest News</h3>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                            <span>View All News</span>
+                            <div class="w-4 h-4 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Featured News -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="md:flex">
+                                <div class="md:w-2/5">
+                                    <div class="h-64 md:h-full bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=university%20president%20and%20international%20dignitaries%20at%20formal%20ceremony%2C%20modern%20university%20setting%2C%20professional%20photography&width=600&height=400&seq=18&orientation=landscape');"></div>
+                                </div>
+                                <div class="md:w-3/5 p-6">
+                                    <div class="flex items-center space-x-2 mb-3">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">University News</span>
+                                        <span class="text-sm text-gray-500">April 8, 2025</span>
+                                    </div>
+                                    <h4 class="text-xl font-bold mb-3">University Signs Major Research Partnership with Global Tech Leaders</h4>
+                                    <p class="text-gray-600 mb-4">The university has established a groundbreaking $75 million research partnership with leading global technology companies to advance innovation in artificial intelligence, quantum computing, and sustainable technologies.</p>
+                                    <a href="#" class="text-primary hover:text-primary/80 font-medium">Read Full Story</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- News List -->
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-md">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Research</span>
+                                    <span class="text-sm text-gray-500">April 5, 2025</span>
+                                </div>
+                                <h4 class="font-bold mb-2">University Researchers Develop Breakthrough in Sustainable Energy Storage</h4>
+                                <p class="text-gray-600 mb-2">A team of researchers has developed a new type of battery technology that could revolutionize renewable energy storage with higher capacity and lower environmental impact.</p>
+                                <a href="#" class="text-primary hover:text-primary/80 text-sm font-medium">Read More</a>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-md">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">International</span>
+                                    <span class="text-sm text-gray-500">April 2, 2025</span>
+                                </div>
+                                <h4 class="font-bold mb-2">New International Campus to Open in Singapore Next Fall</h4>
+                                <p class="text-gray-600 mb-2">The university will open its newest international campus in Singapore, offering specialized programs in business, technology, and environmental sciences to students across Asia.</p>
+                                <a href="#" class="text-primary hover:text-primary/80 text-sm font-medium">Read More</a>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-md">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Academic</span>
+                                    <span class="text-sm text-gray-500">March 28, 2025</span>
+                                </div>
+                                <h4 class="font-bold mb-2">University Launches New Cross-Disciplinary Programs in AI Ethics</h4>
+                                <p class="text-gray-600 mb-2">Responding to the growing importance of ethical considerations in technology, the university is introducing new undergraduate and graduate programs focused on AI ethics and responsible innovation.</p>
+                                <a href="#" class="text-primary hover:text-primary/80 text-sm font-medium">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Events Column -->
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">Upcoming Events</h3>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                            <span>View Calendar</span>
+                            <div class="w-4 h-4 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-center min-w-[60px]">
+                                    <div class="text-sm font-medium text-gray-500">APR</div>
+                                    <div class="text-2xl font-bold text-primary">15</div>
+                                    <div class="text-xs text-gray-500">2025</div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">International Research Symposium</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Annual gathering of researchers from partner institutions to share findings and explore collaboration opportunities.</p>
+                                    <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-time-line"></i>
+                                        </div>
+                                        <span>9:00 AM - 5:00 PM</span>
+                                        <span class="mx-1">•</span>
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-map-pin-line"></i>
+                                        </div>
+                                        <span>Global Conference Center</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-center min-w-[60px]">
+                                    <div class="text-sm font-medium text-gray-500">APR</div>
+                                    <div class="text-2xl font-bold text-primary">22</div>
+                                    <div class="text-xs text-gray-500">2025</div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Global Exchange Fair</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Learn about study abroad and exchange opportunities with representatives from partner universities worldwide.</p>
+                                    <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-time-line"></i>
+                                        </div>
+                                        <span>11:00 AM - 4:00 PM</span>
+                                        <span class="mx-1">•</span>
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-map-pin-line"></i>
+                                        </div>
+                                        <span>Student Union</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-center min-w-[60px]">
+                                    <div class="text-sm font-medium text-gray-500">APR</div>
+                                    <div class="text-2xl font-bold text-primary">28</div>
+                                    <div class="text-xs text-gray-500">2025</div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Distinguished Lecture Series</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Nobel Laureate Dr. Elena Moreno presents "Quantum Computing and the Future of Global Problem Solving"</p>
+                                    <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-time-line"></i>
+                                        </div>
+                                        <span>6:30 PM - 8:00 PM</span>
+                                        <span class="mx-1">•</span>
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-map-pin-line"></i>
+                                        </div>
+                                        <span>Main Auditorium</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-center min-w-[60px]">
+                                    <div class="text-sm font-medium text-gray-500">MAY</div>
+                                    <div class="text-2xl font-bold text-primary">05</div>
+                                    <div class="text-xs text-gray-500">2025</div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">International Cultural Festival</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Annual celebration featuring cultural performances, international cuisine, and global traditions from our diverse student community.</p>
+                                    <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-time-line"></i>
+                                        </div>
+                                        <span>12:00 PM - 8:00 PM</span>
+                                        <span class="mx-1">•</span>
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-map-pin-line"></i>
+                                        </div>
+                                        <span>University Plaza</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <a href="#" class="block w-full py-3 bg-white border border-primary text-primary text-center rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap">Subscribe to Event Updates</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Begin Your Global Academic Journey</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Join our diverse community of scholars, researchers, and innovators from around the world. Discover how our university can help you achieve your academic and professional goals.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="px-8 py-3 bg-white text-primary font-medium rounded-button hover:bg-gray-100 transition-colors whitespace-nowrap">Apply Now</a>
+                <a href="#" class="px-8 py-3 border-2 border-white text-white font-medium rounded-button hover:bg-white/10 transition-colors whitespace-nowrap">Request Information</a>
+                <a href="#" class="px-8 py-3 bg-secondary text-white font-medium rounded-button hover:bg-secondary/90 transition-colors whitespace-nowrap">Schedule a Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 inline-block">logo</a>
+                    <p class="text-gray-400 mb-6 max-w-md">A world-class institution dedicated to academic excellence, groundbreaking research, and global engagement. Empowering students to become leaders and innovators since 1875.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Academics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Campus Life</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Admissions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">International</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Library</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Student Portal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Faculty Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Career Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">IT Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accessibility</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Emergency Info</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mt-0.5">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">123 University Avenue<br>Cambridge, MA 02138<br>United States</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">+1 (617) 555-1234</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@globaluniversity.edu</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h3 class="text-lg font-bold mb-4">Language</h3>
+                        <div class="relative">
+                            <button class="w-full px-4 py-2 bg-gray-800 rounded text-left flex items-center justify-between">
+                                <span>English</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-gray-500 text-sm">&copy; 2025 Global University. All rights reserved.</p>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Terms of Use</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Cookie Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Accessibility</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script>
+        // Publications Chart
+        const publicationsChart = echarts.init(document.getElementById('publications-chart'));
+        publicationsChart.setOption({
+            animation: false,
+            title: {
+                text: 'Research Publications by Field',
+                left: 'center',
+                textStyle: {
+                    color: '#1f2937'
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                textStyle: {
+                    color: '#1f2937'
+                }
+            },
+            legend: {
+                orient: 'vertical',
+                right: 10,
+                top: 'center',
+                textStyle: {
+                    color: '#1f2937'
+                }
+            },
+            series: [
+                {
+                    name: 'Publications',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 8
+                    },
+                    label: {
+                        show: false
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '14',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        { value: 735, name: 'Science & Tech', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+                        { value: 580, name: 'Medicine & Health', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+                        { value: 484, name: 'Social Sciences', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+                        { value: 300, name: 'Business & Economics', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+                        { value: 350, name: 'Arts & Humanities', itemStyle: { color: 'rgba(179, 179, 179, 1)' } }
+                    ]
+                }
+            ]
+        });
+
+        // Funding Chart
+        const fundingChart = echarts.init(document.getElementById('funding-chart'));
+        fundingChart.setOption({
+            animation: false,
+            title: {
+                text: 'Research Funding (in millions)',
+                left: 'center',
+                textStyle: {
+                    color: '#1f2937'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                textStyle: {
+                    color: '#1f2937'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                axisLabel: {
+                    color: '#1f2937'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    color: '#1f2937'
+                }
+            },
+            series: [
+                {
+                    name: 'Government',
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [120, 132, 145, 160, 175, 190],
+                    itemStyle: {
+                        color: 'rgba(87, 181, 231, 1)',
+                        borderRadius: [4, 4, 0, 0]
+                    }
+                },
+                {
+                    name: 'Industry',
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [80, 95, 105, 110, 120, 135],
+                    itemStyle: {
+                        color: 'rgba(141, 211, 199, 1)',
+                        borderRadius: [0, 0, 0, 0]
+                    }
+                },
+                {
+                    name: 'Foundations',
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [50, 60, 65, 80, 90, 95],
+                    itemStyle: {
+                        color: 'rgba(251, 191, 114, 1)',
+                        borderRadius: [0, 0, 0, 0]
+                    }
+                },
+                {
+                    name: 'International',
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [20, 25, 30, 25, 30, 30],
+                    itemStyle: {
+                        color: 'rgba(252, 141, 98, 1)',
+                        borderRadius: [0, 0, 0, 0]
+                    }
+ 
+           
+            worldMap.setOption(worldMapOption);
+
+            // Resize charts when window size changes
+            window.addEventListener('resize', function() {
+                researchChart.resize();
+                worldMap.resize();
+            });
+        });
+
+        // Language selector dropdown toggle
+        document.addEventListener('click', function(e) {
+            const languageSelector = document.querySelector('.language-selector');
+            const languageDropdown = document.querySelector('.language-dropdown');
+            
+            if (languageSelector && languageDropdown) {
+                if (languageSelector.contains(e.target)) {
+                    languageDropdown.classList.toggle('hidden');
+                } else {
+                    if (!languageDropdown.classList.contains('hidden')) {
+                        languageDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        });
+
+        // Sticky header effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+ 
+</body>
+</html>

@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige University | Excellence in Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #FFCC00;
+            --accent-color: #990000;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: var(--dark-gray);
+        }
+
+        .btn-secondary:hover {
+            background: #e6b800;
+            color: var(--dark-gray);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quick-links a {
+            color: white;
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        .quick-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            font-size: 16px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: var(--dark-gray);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: var(--dark-gray);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            width: 220px;
+            padding: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        nav ul li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 8px 20px;
+        }
+
+        .dropdown-menu li a {
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+/* Dropdown Container */
+.dropdown-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 0.25rem 0rem; /* Reduced from 1rem */
+
+}
+
+/* Chevron icon spacing */
+.nav-item > a i.fa-chevron-down {
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+/* Ensure proper hover area */
+.nav-item:hover .horizontal-dropdown {
+  display: block;
+}
+
+/* ===== Horizontal Dropdown Navigation ===== */
+ /* ===== Enhanced Horizontal Dropdown CSS ===== */
+.main-nav {
+  display: flex;
+  list-style: none;
+  position: relative;
+  gap: 5px; /* Spacing between main nav items */
+}
+
+.nav-item > a {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Space between icon and text */
+  padding-bottom: 0.6rem; /* Slightly reduce main nav padding */
+
+}
+
+/* Full-width horizontal dropdown */
+.horizontal-dropdown {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  right: 0; /* Full width */
+  background: #f8f9fa; /* Light gray background */
+  display: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 100;
+  white-space: nowrap;
+  padding: 0.5rem 0; /* Reduced padding */
+
+  /*padding: 12px 30px;*/ /* Increased spacing */
+  border-top: 3px solid var(--secondary-color);
+  justify-content: center; /* Center links */
+}
+
+.horizontal-dropdown a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px; /* Wider spacing */
+  color: var(--dark-gray);
+  font-size: 14px;
+  transition: all 0.2s;
+  gap: 8px; /* Space between icon and text */
+  border-radius: 4px;
+  margin-top: -4px; /* NEW: Pulls dropdown up to close the gap */
+
+}
+
+.horizontal-dropdown a:hover {
+  color: var(--primary-color);
+  background: rgba(0,51,102,0.05); /* Light blue hover */
+  transform: translateY(-2px);
+}
+
+.horizontal-dropdown i {
+  font-size: 16px;
+  width: 20px; /* Fixed icon width */
+  text-align: center;
+  color: var(--primary-color);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); } /* Reduced from -5px */
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .horizontal-dropdown {
+    position: static;
+    display: none !important;
+    white-space: normal;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .horizontal-dropdown a {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hero-btns .btn {
+            min-width: 180px;
+        }
+
+        /* Quick Links Section */
+        .quick-access {
+            background: var(--light-gray);
+            padding: 50px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .quick-link-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .quick-link-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-link-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .quick-link-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* News Section */
+        .news-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .news-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .main-news {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .main-news img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-news-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 30px;
+        }
+
+        .news-tag {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .main-news-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .main-news-content p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .secondary-news {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            background: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item-img {
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+        }
+
+        .news-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-item-content {
+            padding: 20px;
+        }
+
+        .news-item-content .news-tag {
+            background: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .news-item-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--dark-gray);
+        }
+
+        .news-item-content p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .view-all {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Programs Section */
+        .programs-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .program-card:hover .program-card-img img {
+            transform: scale(1.1);
+        }
+
+        .program-card-content {
+            padding: 25px;
+        }
+
+        .program-card-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .program-card-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .program-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Events Section */
+        .events-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .events-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .events-calendar {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header h3 {
+            color: var(--primary-color);
+        }
+
+        .calendar-nav button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 5px;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .calendar-day:hover {
+            background: var(--secondary-color);
+        }
+
+        .calendar-day.event-day {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .calendar-day.today {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .calendar-day.empty {
+            background: transparent;
+            cursor: default;
+        }
+
+        .event-list {
+            margin-top: 30px;
+        }
+
+        .event-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .event-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .event-item-meta {
+            display: flex;
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .event-item-meta span {
+            margin-right: 15px;
+        }
+
+        .event-item-meta i {
+            margin-right: 5px;
+            color: var(--secondary-color);
+        }
+
+        .upcoming-events {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .upcoming-event {
+            display: flex;
+            background: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .upcoming-event-date {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            min-width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .upcoming-event-date .day {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .upcoming-event-date .month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .upcoming-event-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .upcoming-event-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .upcoming-event-content p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .event-time {
+            display: flex;
+            align-items: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .event-time i {
+            margin-right: 5px;
+            color: var(--secondary-color);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .testimonials-slider {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary-color);
+            opacity: 0.5;
+            position: absolute;
+        }
+
+        .testimonial-text:before {
+            top: -20px;
+            left: -20px;
+        }
+
+        .testimonial-text:after {
+            bottom: -40px;
+            right: -20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--secondary-color);
+            transform: scale(1.2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--secondary-color);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--dark-gray);
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-btns .btn {
+            min-width: 180px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            margin-top: 3px;
+        }
+
+        .contact-info div {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .social-links-footer {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links-footer a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links-footer a:hover {
+            background: var(--secondary-color);
+            color: var(--dark-gray);
+        }
+
+        .footer-bottom {
+            background: #222;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .news-container, .events-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-news {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .quick-links a {
+                margin: 0 10px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                padding: 0;
+                display: none;
+            }
+            
+            nav ul li:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .dropdown-menu li {
+                padding: 5px 0;
+                text-align: center;
+            }
+            
+            .search-box {
+                margin: 15px 0 0;
+                width: 100%;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .quick-access-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-item {
+                flex-direction: column;
+            }
+            
+            .news-item-img {
+                width: 100%;
+                height: 150px;
+            }
+            
+            .upcoming-event {
+                flex-direction: column;
+            }
+            
+            .upcoming-event-date {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .upcoming-event-date .day {
+                font-size: 1.5rem;
+            }
+            
+            .cta-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="quick-links">
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Campus Map</a>
+                <a href="#"><i class="fas fa-phone"></i> Contact</a>
+                <a href="#"><i class="fas fa-calendar-alt"></i> Events</a>
+                <a href="#"><i class="fas fa-user"></i> My Account</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/60x60" alt="University Logo">
+                <div class="logo-text">
+                    <h1>Prestige University</h1>
+                    <p>Excellence in Education Since 1890</p>
+                </div>
+            </div>
+            
+ <!-- In the <header> section, replace the entire <nav> with this: -->
+ <!-- Updated Navigation HTML -->
+ <!-- Updated Navigation HTML -->
+
+
+
+ <nav>
+  <ul class="main-nav">
+    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+    
+    <!-- About Dropdown -->
+    <li class="nav-item">
+      <a href="#"><i class="fas fa-info-circle"></i> About <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="horizontal-dropdown">
+        <div class="dropdown-container">
+          <a href="#"><i class="fas fa-bullseye"></i> Mission</a>
+          <a href="#"><i class="fas fa-landmark"></i> History</a>
+          <a href="#"><i class="fas fa-user-tie"></i> Leadership</a>
+          <a href="#"><i class="fas fa-map-marked-alt"></i> Campus Tour</a>
+          <a href="#"><i class="fas fa-trophy"></i> Rankings</a>
+        </div>
+      </div>
+    </li>
+    
+    <!-- Academics Dropdown -->
+    <li class="nav-item">
+      <a href="#"><i class="fas fa-graduation-cap"></i> Academics <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="horizontal-dropdown">
+        <div class="dropdown-container">
+          <a href="#"><i class="fas fa-school"></i> Schools</a>
+          <a href="#"><i class="fas fa-book-open"></i> Programs</a>
+          <a href="#"><i class="fas fa-clipboard-list"></i> Courses</a>
+          <a href="#"><i class="fas fa-book"></i> Libraries</a>
+          <a href="#"><i class="fas fa-laptop"></i> Online Learning</a>
+        </div>
+      </div>
+    </li>
+    
+    <!-- Admission Dropdown -->
+    <li class="nav-item">
+      <a href="#"><i class="fas fa-user-plus"></i> Admission <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="horizontal-dropdown">
+        <div class="dropdown-container">
+          <a href="#"><i class="fas fa-user-graduate"></i> Undergraduate</a>
+          <a href="#"><i class="fas fa-user-tie"></i> Graduate</a>
+          <a href="#"><i class="fas fa-globe-americas"></i> International</a>
+          <a href="#"><i class="fas fa-dollar-sign"></i> Tuition & Aid</a>
+          <a href="#"><i class="fas fa-vr-cardboard"></i> Virtual Tour</a>
+        </div>
+      </div>
+    </li>
+    
+    <!-- Campus Life Dropdown -->
+    <li class="nav-item">
+      <a href="#"><i class="fas fa-utensils"></i> Campus <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="horizontal-dropdown">
+        <div class="dropdown-container">
+          <a href="#"><i class="fas fa-bed"></i> Housing</a>
+          <a href="#"><i class="fas fa-ice-cream"></i> Dining</a>
+          <a href="#"><i class="fas fa-users"></i> Organizations</a>
+          <a href="#"><i class="fas fa-football-ball"></i> Athletics</a>
+          <a href="#"><i class="fas fa-paint-brush"></i> Arts</a>
+        </div>
+      </div>
+    </li>
+    
+    <!-- Simple Links (No Dropdown) -->
+    <li><a href="#"><i class="fas fa-flask"></i> Research</a></li>
+    <li><a href="#"><i class="fas fa-user-friends"></i> Alumni</a></li>
+    
+    <!-- Search Box -->
+    <li class="search-item">
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </li>
+  </ul>
+</nav>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Shape Your Future at Prestige University</h1>
+            <p>Join a community of scholars committed to academic excellence, innovative research, and making a positive impact in the world.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn">Apply Now</a>
+                <a href="#" class="btn btn-secondary">Explore Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access">
+        <div class="container">
+            <div class="quick-access-grid">
+                <div class="quick-link-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Undergraduate Programs</h3>
+                    <p>Discover 120+ bachelor's degrees</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="quick-link-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Graduate Programs</h3>
+                    <p>Advance your career with our master's and doctoral programs</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="quick-link-item">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Online Learning</h3>
+                    <p>Flexible programs for working professionals</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="quick-link-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Financial Aid</h3>
+                    <p>Explore scholarships and funding options</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="quick-link-item">
+                    <i class="fas fa-home"></i>
+                    <h3>Campus Tours</h3>
+                    <p>Visit our beautiful 200-acre campus</p>
+                    <a href="#">Schedule Visit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <h2 class="section-title">University News</h2>
+            <p class="text-center">Stay updated with the latest happenings at Prestige University</p>
+            
+            <div class="news-container">
+                <div class="main-news">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="University News">
+                    <div class="main-news-content">
+                        <span class="news-tag">Featured</span>
+                        <h3>Prestige University Ranked Among Top 50 National Universities</h3>
+                        <p>Our university has been recognized for academic excellence and student success in the latest national rankings.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="secondary-news">
+                    <div class="news-item">
+                        <div class="news-item-img">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Research News">
+                        </div>
+                        <div class="news-item-content">
+                            <span class="news-tag">Research</span>
+                            <h4>Breakthrough in Renewable Energy Research</h4>
+                            <p>Our engineering team develops more efficient solar panel technology with industry partners.</p>
+                            <a href="#">Read Story →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-item-img">
+                            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Campus News">
+                        </div>
+                        <div class="news-item-content">
+                            <span class="news-tag">Campus Life</span>
+                            <h4>New Student Center Grand Opening</h4>
+                            <p>The $50 million facility offers state-of-the-art spaces for student collaboration and recreation.</p>
+                            <a href="#">Read Story →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-item-img">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Alumni News">
+                        </div>
+                        <div class="news-item-content">
+                            <span class="news-tag">Alumni</span>
+                            <h4>Alumnus Wins Prestigious International Award</h4>
+                            <p>John Smith recognized for contributions to sustainable urban development.</p>
+                            <a href="#">Read Story →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all">
+                <a href="#" class="btn">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs-section">
+        <div class="container">
+            <h2 class="section-title">Our Academic Programs</h2>
+            <p class="text-center">Explore our comprehensive range of undergraduate, graduate, and professional programs</p>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-card-img">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business Programs">
+                    </div>
+                    <div class="program-card-content">
+                        <h3>Business & Economics</h3>
+                        <p>Develop leadership skills and business acumen through our AACSB-accredited programs.</p>
+                        <div class="program-meta">
+                            <span><i class="fas fa-graduation-cap"></i> 12 Programs</span>
+                            <span><i class="fas fa-user-graduate"></i> 1,200 Students</span>
+                        </div>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card-img">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Engineering Programs">
+                    </div>
+                    <div class="program-card-content">
+                        <h3>Engineering & Technology</h3>
+                        <p>Hands-on programs preparing students for careers in cutting-edge technologies.</p>
+                        <div class="program-meta">
+                            <span><i class="fas fa-graduation-cap"></i> 18 Programs</span>
+                            <span><i class="fas fa-user-graduate"></i> 2,500 Students</span>
+                        </div>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card-img">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Health Sciences Programs">
+                    </div>
+                    <div class="program-card-content">
+                        <h3>Health Sciences</h3>
+                        <p>Train for rewarding careers in medicine, nursing, and allied health professions.</p>
+                        <div class="program-meta">
+                            <span><i class="fas fa-graduation-cap"></i> 15 Programs</span>
+                            <span><i class="fas fa-user-graduate"></i> 1,800 Students</span>
+                        </div>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card-img">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Arts Programs">
+                    </div>
+                    <div class="program-card-content">
+                        <h3>Arts & Humanities</h3>
+                        <p>Foster creativity and critical thinking through our diverse liberal arts programs.</p>
+                        <div class="program-meta">
+                            <span><i class="fas fa-graduation-cap"></i> 22 Programs</span>
+                            <span><i class="fas fa-user-graduate"></i> 1,100 Students</span>
+                        </div>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card-img">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Science Programs">
+                    </div>
+                    <div class="program-card-content">
+                        <h3>Natural Sciences</h3>
+                        <p>Explore the frontiers of scientific discovery in our research-intensive programs.</p>
+                        <div class="program-meta">
+                            <span><i class="fas fa-graduation-cap"></i> 14 Programs</span>
+                            <span><i class="fas fa-user-graduate"></i> 900 Students</span>
+                        </div>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card-img">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Law Programs">
+                    </div>
+                    <div class="program-card-content">
+                        <h3>Law & Public Policy</h3>
+                        <p>Prepare for leadership roles in law, government, and public service.</p>
+                        <div class="program-meta">
+                            <span><i class="fas fa-graduation-cap"></i> 8 Programs</span>
+                            <span><i class="fas fa-user-graduate"></i> 700 Students</span>
+                        </div>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all">
+                <a href="#" class="btn">View All Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">By The Numbers</h2>
+            <p class="text-center">Prestige University at a glance</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>12,500+</h3>
+                    <p>Students Enrolled</p>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>950+</h3>
+                    <p>Faculty Members</p>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>120+</h3>
+                    <p>Degree Programs</p>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>90+</h3>
+                    <p>Countries Represented</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <p class="text-center">Join us for these exciting campus events</p>
+            
+            <div class="events-container">
+                <div class="events-calendar">
+                    <div class="calendar-header">
+                        <h3>October 2023</h3>
+                        <div class="calendar-nav">
+                            <button><i class="fas fa-chevron-left"></i></button>
+                            <button><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <div class="calendar-day-header">Sun</div>
+                        <div class="calendar-day-header">Mon</div>
+                        <div class="calendar-day-header">Tue</div>
+                        <div class="calendar-day-header">Wed</div>
+                        <div class="calendar-day-header">Thu</div>
+                        <div class="calendar-day-header">Fri</div>
+                        <div class="calendar-day-header">Sat</div>
+                        
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day">1</div>
+                        <div class="calendar-day">2</div>
+                        <div class="calendar-day">3</div>
+                        <div class="calendar-day">4</div>
+                        <div class="calendar-day">5</div>
+                        
+                        <div class="calendar-day">6</div>
+                        <div class="calendar-day">7</div>
+                        <div class="calendar-day event-day">8</div>
+                        <div class="calendar-day">9</div>
+                        <div class="calendar-day today">10</div>
+                        <div class="calendar-day event-day">11</div>
+                        <div class="calendar-day">12</div>
+                        
+                        <div class="calendar-day">13</div>
+                        <div class="calendar-day event-day">14</div>
+                        <div class="calendar-day">15</div>
+                        <div class="calendar-day">16</div>
+                        <div class="calendar-day">17</div>
+                        <div class="calendar-day event-day">18</div>
+                        <div class="calendar-day">19</div>
+                        
+                        <div class="calendar-day">20</div>
+                        <div class="calendar-day">21</div>
+                        <div class="calendar-day">22</div>
+                        <div class="calendar-day">23</div>
+                        <div class="calendar-day event-day">24</div>
+                        <div class="calendar-day">25</div>
+                        <div class="calendar-day">26</div>
+                        
+                        <div class="calendar-day">27</div>
+                        <div class="calendar-day event-day">28</div>
+                        <div class="calendar-day">29</div>
+                        <div class="calendar-day">30</div>
+                        <div class="calendar-day">31</div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                    </div>
+                    
+                    <div class="event-list">
+                        <h3>Today's Events</h3>
+                        
+                        <div class="event-item">
+                            <h4>Undergraduate Open House</h4>
+                            <div class="event-item-meta">
+                                <span><i class="far fa-clock"></i> 9:00 AM - 3:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Main Campus</span>
+                            </div>
+                            <p>Prospective students can tour campus, meet faculty, and learn about academic programs.</p>
+                            <a href="#" class="btn">Register</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="upcoming-events">
+                    <div class="upcoming-event">
+                        <div class="upcoming-event-date">
+                            <span class="day">14</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="upcoming-event-content">
+                            <h4>Homecoming Weekend</h4>
+                            <p>Join us for a weekend of celebration, reunions, and the big game against our rivals!</p>
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> All Day | <i class="fas fa-map-marker-alt"></i> Various Locations
+                            </div>
+                            <a href="#" class="btn">More Info</a>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-event">
+                        <div class="upcoming-event-date">
+                            <span class="day">18</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="upcoming-event-content">
+                            <h4>Distinguished Lecture Series</h4>
+                            <p>Nobel Laureate Dr. Jane Smith presents "Frontiers in Quantum Computing"</p>
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 4:00 PM | <i class="fas fa-map-marker-alt"></i> Science Center Auditorium
+                            </div>
+                            <a href="#" class="btn">Register</a>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-event">
+                        <div class="upcoming-event-date">
+                            <span class="day">24</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="upcoming-event-content">
+                            <h4>Career Fair</h4>
+                            <p>Connect with 100+ employers from various industries looking to hire students.</p>
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 10:00 AM - 4:00 PM | <i class="fas fa-map-marker-alt"></i> Student Union
+                            </div>
+                            <a href="#" class="btn">More Info</a>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-event">
+                        <div class="upcoming-event-date">
+                            <span class="day">28</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="upcoming-event-content">
+                            <h4>Fall Concert</h4>
+                            <p>Featuring Grammy-winning artist performing with our university orchestra.</p>
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 7:30 PM | <i class="fas fa-map-marker-alt"></i> Performing Arts Center
+                            </div>
+                            <a href="#" class="btn">Get Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all">
+                <a href="#" class="btn">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <p class="text-center">Hear from our students and alumni about their Prestige University experience</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-text">
+                        My time at Prestige University transformed me both academically and personally. The faculty challenged me to think critically, the research opportunities prepared me for graduate school, and the friendships I made will last a lifetime.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Class of 2020 | Ph.D. Candidate at MIT</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        As an international student, I was nervous about adjusting to life in a new country. The support I received from faculty, staff, and fellow students made all the difference. Prestige University truly became my home away from home.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Mendez">
+                        <div class="author-info">
+                            <h4>Carlos Mendez</h4>
+                            <p>Class of 2018 | Software Engineer at Google</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        The hands-on learning experiences and mentorship I received at Prestige University gave me the confidence and skills to launch my own startup right after graduation. The entrepreneurial resources here are unmatched.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jamie Chen">
+                        <div class="author-info">
+                            <h4>Jamie Chen</h4>
+                            <p>Class of 2019 | Founder & CEO of TechVenture</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-nav">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Begin Your Journey?</h2>
+            <p>Take the first step toward your future at Prestige University. Explore our programs, visit campus, or start your application today.</p>
+            <div class="cta-btns">
+                <a href="#" class="btn">Apply Now</a>
+                <a href="#" class="btn btn-secondary">Request Info</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Prestige University</h3>
+                    <p>Founded in 1890, Prestige University is a leading research institution committed to academic excellence, innovative discovery, and community engagement.</p>
+                    <div class="social-links-footer">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="#">Directory</a></li>
+                        <li><a href="#">Employment</a></li>
+                        <li><a href="#">Maps & Directions</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">Safety & Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Libraries</a></li>
+                        <li><a href="#">IT Services</a></li>
+                        <li><a href="#">Health Services</a></li>
+                        <li><a href="#">Dining</a></li>
+                        <li><a href="#">Housing</a></li>
+                        <li><a href="#">Parking</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>123 University Avenue<br>Prestige City, ST 12345</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>(800) 123-4567<br>Admissions: (800) 123-4568</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>info@prestige.edu<br>admissions@prestige.edu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 Prestige University. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Accessibility</a> | <a href="#">Title IX</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                showTestimonial(slideIndex);
+            });
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Calendar Navigation (simplified)
+        const prevMonthBtn = document.querySelector('.calendar-nav button:first-child');
+        const nextMonthBtn = document.querySelector('.calendar-nav button:last-child');
+
+        prevMonthBtn.addEventListener('click', function() {
+            // In a real implementation, this would update the calendar to show the previous month
+            console.log('Previous month clicked');
+        });
+
+        nextMonthBtn.addEventListener('click', function() {
+            // In a real implementation, this would update the calendar to show the next month
+            console.log('Next month clicked');
+        });
+
+        // Highlight today's events
+        const todayEvents = document.querySelectorAll('.calendar-day.today');
+        todayEvents.forEach(day => {
+            day.addEventListener('click', function() {
+                // Scroll to today's events section
+                document.querySelector('.event-list').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Search functionality (simplified)
+        const searchBox = document.querySelector('.search-box input');
+        const searchBtn = document.querySelector('.search-box button');
+
+        searchBtn.addEventListener('click', function() {
+            const searchTerm = searchBox.value.trim();
+            if (searchTerm) {
+                alert(`In a real implementation, this would search for: ${searchTerm}`);
+                // window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+
+        searchBox.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

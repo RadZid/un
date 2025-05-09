@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global University | #1 Ranked Worldwide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements that need more precise styling */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .news-card {
+            transition: all 0.3s ease;
+        }
+        .news-card:hover .news-overlay {
+            opacity: 1;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .stats-counter {
+            font-family: 'Arial', sans-serif;
+            font-weight: 700;
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Top Announcement Bar -->
+    <div class="bg-yellow-400 text-gray-900 py-2 px-4 text-center text-sm font-medium">
+        <span class="mr-2">🚀</span> Global University ranked #1 worldwide for the 5th consecutive year! 
+        <a href="#" class="ml-2 font-semibold underline">Read more</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">GU</div>
+                        <span class="ml-3 text-xl font-bold text-gray-900">Global University</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-blue-600 font-medium">Home</a>
+                    <a href="#" class="hover:text-blue-600 transition">About</a>
+                    <a href="#" class="hover:text-blue-600 transition">Academics</a>
+                    <a href="#" class="hover:text-blue-600 transition">Research</a>
+                    <a href="#" class="hover:text-blue-600 transition">Admissions</a>
+                    <a href="#" class="hover:text-blue-600 transition">Campus Life</a>
+                    <div class="relative group">
+                        <button class="hover:text-blue-600 transition flex items-center">
+                            More <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50">Alumni</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50">News</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50">Events</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50">Contact</a>
+                        </div>
+                    </div>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition">Apply Now</button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Home</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600 hover:bg-blue-50">About</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600 hover:bg-blue-50">Academics</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600 hover:bg-blue-50">Research</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600 hover:bg-blue-50">Admissions</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600 hover:bg-blue-50">Campus Life</a>
+                <div class="pt-4 pb-2 border-t">
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Shaping the Future of <span class="text-yellow-300">Education</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90">
+                        Ranked #1 university globally. Join our community of innovators, thinkers, and leaders.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-lg transition">
+                            Apply Now
+                        </button>
+                        <button class="border-2 border-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-bold text-lg transition">
+                            Explore Programs
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-yellow-400 rounded-full opacity-20"></div>
+                        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-300 rounded-full opacity-20"></div>
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Global University Campus" 
+                             class="relative z-10 rounded-xl shadow-2xl w-full h-auto floating">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 stats-counter" data-target="150">0</div>
+                    <div class="text-gray-600">Years of Excellence</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 stats-counter" data-target="45000">0</div>
+                    <div class="text-gray-600">Students Enrolled</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 stats-counter" data-target="3500">0</div>
+                    <div class="text-gray-600">Faculty Members</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 stats-counter" data-target="95">0</div>
+                    <div class="text-gray-600">Countries Represented</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">World-Class Academic Programs</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from over 300 undergraduate and graduate programs across 12 schools and colleges.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-blue-500 flex items-center justify-center">
+                        <i class="fas fa-flask text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold mb-1">STEM</div>
+                        <h3 class="text-xl font-bold mb-3">Engineering & Technology</h3>
+                        <p class="text-gray-600 mb-4">
+                            Cutting-edge programs in AI, Robotics, Computer Science, and more with industry partnerships.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium flex items-center">
+                            Explore Programs <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-green-500 flex items-center justify-center">
+                        <i class="fas fa-balance-scale text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-green-600 font-semibold mb-1">Humanities</div>
+                        <h3 class="text-xl font-bold mb-3">Law & Social Sciences</h3>
+                        <p class="text-gray-600 mb-4">
+                            Develop critical thinking and leadership skills through our renowned humanities programs.
+                        </p>
+                        <a href="#" class="text-green-600 font-medium flex items-center">
+                            Explore Programs <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-purple-500 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-purple-600 font-semibold mb-1">Health</div>
+                        <h3 class="text-xl font-bold mb-3">Medicine & Life Sciences</h3>
+                        <p class="text-gray-600 mb-4">
+                            World-leading medical education and research with state-of-the-art facilities.
+                        </p>
+                        <a href="#" class="text-purple-600 font-medium flex items-center">
+                            Explore Programs <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-bold transition">
+                    View All Programs
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Pioneering Research That Changes Lives</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Our researchers are tackling the world's most pressing challenges, from climate change to global health.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold">$2.5 Billion</h4>
+                                <p class="text-gray-600">In annual research expenditures</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold">25 Nobel Laureates</h4>
+                                <p class="text-gray-600">Among our faculty and alumni</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold">300+ Patents</h4>
+                                <p class="text-gray-600">Filed annually by our researchers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold transition">
+                        Explore Research
+                    </button>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-leaf text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">Sustainability</h3>
+                            <p class="text-gray-600 text-sm">Developing clean energy solutions for a greener future.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-dna text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">Genomics</h3>
+                            <p class="text-gray-600 text-sm">Advancing personalized medicine through genetic research.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-brain text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">Neuroscience</h3>
+                            <p class="text-gray-600 text-sm">Unlocking the mysteries of the human brain.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-robot text-yellow-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">AI & Robotics</h3>
+                            <p class="text-gray-600 text-sm">Creating intelligent systems that benefit society.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Life -->
+    <section class="py-20 parallax" style="background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white bg-opacity-90 backdrop-blur-sm rounded-xl p-8 md:p-12 max-w-3xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Vibrant Campus Life</h2>
+                <p class="text-xl text-gray-700 mb-8">
+                    Experience a dynamic community with 500+ student organizations, championship athletics, and cultural events from around the world.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-users text-blue-600 mr-3"></i>
+                        <span>500+ Student Clubs</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-trophy text-blue-600 mr-3"></i>
+                        <span>32 Varsity Teams</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-music text-blue-600 mr-3"></i>
+                        <span>100+ Performances Yearly</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-utensils text-blue-600 mr-3"></i>
+                        <span>Global Dining Options</span>
+                    </div>
+                </div>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold transition">
+                    Discover Campus Life
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">News & Events</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Stay updated with the latest happenings at Global University.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- News 1 -->
+                <div class="relative rounded-xl overflow-hidden shadow-md news-card h-96">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80" 
+                         alt="Research breakthrough" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <span class="bg-blue-600 text-xs font-semibold px-3 py-1 rounded-full mb-2 inline-block">Research</span>
+                        <h3 class="text-xl font-bold mb-2">Scientists Discover New Renewable Energy Source</h3>
+                        <p class="text-sm opacity-90 mb-3">Our energy research team has made a breakthrough that could revolutionize clean power.</p>
+                        <div class="flex items-center text-sm">
+                            <i class="far fa-calendar mr-2"></i> June 15, 2023
+                        </div>
+                    </div>
+                    <div class="news-overlay absolute inset-0 bg-blue-600 bg-opacity-80 flex items-center justify-center opacity-0 transition">
+                        <a href="#" class="text-white font-bold px-6 py-3 border-2 border-white rounded-full hover:bg-white hover:text-blue-600 transition">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- News 2 -->
+                <div class="relative rounded-xl overflow-hidden shadow-md news-card h-96">
+                    <img src="https://images.unsplash.com/photo-1542711490-65597d5dee21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Campus event" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <span class="bg-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2 inline-block">Event</span>
+                        <h3 class="text-xl font-bold mb-2">Annual Global Culture Festival Returns</h3>
+                        <p class="text-sm opacity-90 mb-3">Celebrate diversity with food, performances, and traditions from around the world.</p>
+                        <div class="flex items-center text-sm">
+                            <i class="far fa-calendar mr-2"></i> July 22-24, 2023
+                        </div>
+                    </div>
+                    <div class="news-overlay absolute inset-0 bg-green-600 bg-opacity-80 flex items-center justify-center opacity-0 transition">
+                        <a href="#" class="text-white font-bold px-6 py-3 border-2 border-white rounded-full hover:bg-white hover:text-green-600 transition">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- News 3 -->
+                <div class="relative rounded-xl overflow-hidden shadow-md news-card h-96">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                         alt="Alumni achievement" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <span class="bg-purple-600 text-xs font-semibold px-3 py-1 rounded-full mb-2 inline-block">Alumni</span>
+                        <h3 class="text-xl font-bold mb-2">Alumna Wins Prestigious International Award</h3>
+                        <p class="text-sm opacity-90 mb-3">Dr. Sarah Chen recognized for her contributions to medical research.</p>
+                        <div class="flex items-center text-sm">
+                            <i class="far fa-calendar mr-2"></i> June 5, 2023
+                        </div>
+                    </div>
+                    <div class="news-overlay absolute inset-0 bg-purple-600 bg-opacity-80 flex items-center justify-center opacity-0 transition">
+                        <a href="#" class="text-white font-bold px-6 py-3 border-2 border-white rounded-full hover:bg-white hover:text-purple-600 transition">
+                            Read Story
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-bold transition">
+                    View All News
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hear From Our Community</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    What students, faculty, and alumni say about their Global University experience.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                             alt="Student testimonial" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Jessica Tan</h4>
+                            <p class="text-gray-600 text-sm">Computer Science '22</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "The opportunities at Global University are unparalleled. I interned at three tech giants before graduating and had multiple job offers."
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                             alt="Faculty testimonial" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Dr. Michael Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Professor of Biology</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "The research facilities and collaborative environment here allow us to push boundaries in ways I haven't experienced at other institutions."
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" 
+                             alt="Alumni testimonial" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Amina Diallo</h4>
+                            <p class="text-gray-600 text-sm">International Relations '19</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "The global perspective I gained at GU has been invaluable in my diplomatic career. The alumni network opened doors worldwide."
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Join Our Global Community?</h2>
+            <p class="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
+                Applications for Fall 2023 are now open. Begin your journey at the world's top-ranked university.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-lg transition">
+                    Apply Now
+                </button>
+                <button class="border-2 border-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-bold text-lg transition">
+                    Request Information
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About GU</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition">History & Mission</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Leadership</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Rankings</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Visit Campus</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Academics</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition">Schools & Colleges</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Degree Programs</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Online Learning</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Libraries</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Academic Calendar</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Admissions</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition">Undergraduate</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Graduate</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">International</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Tuition & Aid</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Virtual Tour</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition">Alumni</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Parents</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Media</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Give</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800">
+                <div class="md:flex md:items-center md:justify-between">
+                    <div class="flex justify-center md:justify-start space-x-6 mb-6 md:mb-0">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="text-center md:text-right text-gray-400 text-sm">
+                        <p>© 2023 Global University. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animated counters
+        const counters = document.querySelectorAll('.stats-counter');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Start counters when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+    </script>
+</body>
+</html>
